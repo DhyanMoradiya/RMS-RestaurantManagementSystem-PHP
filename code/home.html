@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Boxicons CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> 
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" media="screen and (max-width:1017px)" href="../css/mainSamllScreen.css">
+  <link rel="shortcut icon" href="../source/fevicon.ico" type="image/x-icon">
+
+  <title>JSK Resturant</title>
+</head>
+
+<body onload="loading()">
+
+  <!---------- PRE LOADER----------->
+  <div id="loader">
+    <img src="..\source\Restaurant_Logo.webp" />
+  </div>
+
+  <!------------- NAV BAR -------------->
+  <div id="navButton">
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+  </div>
+  <nav class="navBar">
+    <div id="navBarItem">
+      <img src="..\source\Restaurant_Logo_Short.webp" alt="Logo">
+      <ul class="links">
+        <li id="crossButton"><i class='bx bx-x'></i></li>
+        <li><a class="item" href="#home">Home</a></li>
+        <li><a class="item" href="#aboutUs">About Us</a></li>
+        <li><a class="item" href="#menu">Menu</a></li>
+        <li><a class="item" href="#contectUs">Contect</a></li>
+        <li><a id="login2" class="item" href="login.php">Login</a></li>
+      </ul>
+      <ul class="links">
+        <li><a id="login" class="item" href="login.php">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!----------- slider --------------->
+  <div id="home">
+
+    <div class="slides fade">
+      <img src="../source/slider-bg-1.jpg">
+      <div class="slide-text">
+        <h1>JSK Restaurant</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque eum soluta consectetur. Praesentium dolores
+          delectus est, repudiandae sunt voluptas maiores temporibus ipsum omnis excepturi! Adipisci, dolor perferendis.
+          Laudantium vitae blanditiis nam dolorem.</p>
+        <a href="menu.php" class="btn">EXPLORE MENU</a>
+      </div>
+    </div>
+
+    <div class="slides fade">
+      <img src="../source/slider-bg-2.jpg">
+      <div class="slide-text">
+        <h1>Contact</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque eum soluta consectetur. Praesentium dolores
+          delect Lorem, ipsum dolor..</p>
+        <a href="#contectUs" class="btn">CONTECT US</a>
+      </div>
+    </div>
+
+    <div class="slides fade">
+      <img src="../source/slider-bg-3.jpg">
+      <div class="slide-text">
+        <h1>About</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque eum soluta consectetur. Praesentium dolores
+          delectus est, repudiandae sunt voluptas maiores temporibus ipsum omnis excepturi! Adipisci, dolor perferendis.
+          Laudantium vitae blanditiis nam dolorem. Lorem ipsum dolor sit amet consectetur!</p>
+        <a href="#aboutUs" class="btn">ABOUT US</a>
+      </div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+  </div>
+  <div id="bars" style="text-align:center;">
+    <span class="bar" onclick="currentSlide(1)"></span>
+    <span class="bar" onclick="currentSlide(2)"></span>
+    <span class="bar" onclick="currentSlide(3)"></span>
+  </div>
+
+
+  <!----------- About us --------------->
+  <div id="aboutUs">
+    <div class="about-slider">
+
+      <div id="mask">
+
+
+        <ul>
+          <li id="first" class="firstanimation">
+            <img src="../source/about-bg-1.jpg" alt="">
+          </li>
+
+          <li id="second" class="secondanimation">
+            <img src="../source/about-bg-2.jpg" alt="">
+          </li>
+
+          <li id="third" class="thirdanimation">
+            <img src="../source/about-bg-3.jpg" alt="">
+          </li>
+
+          <li id="fourth" class="fourthanimation">
+            <img src="../source/about-bg-4.jpg" alt="">
+          </li>
+
+          <li id="fifth" class="fifthanimation">
+            <img src="../source/about-bg-5.jpg" alt="">
+          </li>
+        </ul>
+
+      </div>
+    </div>
+    <div class="about-info">
+      <h1>About Us</h1>
+      <p class="a-headline">Serving Best Food Since 1984</p>
+      <p class="a-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et animi eum ut id eligendi quisquam
+        beatae odit officiis, laboriosam, minus amet tenetur culpa quos hic excepturi similique accusantium ducimus
+        exercitationem obcaecati magni! Perferendis id quo tenetur laboriosam necessitatibus a nemo corporis velit
+        dolores officiis fuga quas, quasi placeat nostrum et.</p>
+      <img id="a-logo" src="..\source\Restaurant_Logo_Short.webp" alt="">
+      <img src="../source/design.png" alt="" id="a-imgDesign">
+    </div>
+
+  </div>
+
+
+  <!----------- Menu --------------->
+  <div id="menu">
+    <div class="menu-info">
+      <h1>Menu</h1>
+      <p class="m-headline">Loved by Thousands</p>
+
+      <div class="mslides mfade">
+        <div>
+          <img src="../source/menu_image/pizza.png">
+          <div class="menu-text">
+            <p class="food-title">Sicilian Pizza</p>
+            <p class="food-des">No matter how much your heart is grieving, if you keep on eating pizza, the dream that
+              you
+              wish will come true.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mslides mfade">
+        <div>
+          <img src="../source/menu_image/burger.png">
+          <div class="menu-text">
+            <p class="food-title">Burger</p>
+            <p class="food-des">a burger without cheese is like a hug without a squeeze</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mslides mfade">
+        <div>
+          <img src="../source/menu_image/dosa.png">
+          <div class="menu-text">
+            <p class="food-title">Dosa</p>
+            <p class="food-des">Take south indian fell with extra spicy amd cheesy Dosa.</p>
+            <div class="menu-text">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mslides mfade">
+        <div>
+          <img src="../source/menu_image/hotdog.png">
+          <div class="menu-text">
+            <p class="food-title">Hot Dog</p>
+            <p class="food-des">Try spicy and testy ultimate hot dog</p>
+            <div class="menu-text">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mslides mfade">
+        <div>
+          <img src="../source/menu_image/idli.png">
+          <div class="menu-text">
+            <p class="food-title">Idli</p>
+            <p class="food-des">Enjoy the hot idli sambhar with cool chutney</p>
+            <div class="menu-text">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mslides mfade">
+        <div>
+          <img src="../source/menu_image/samosa.png">
+          <div class="menu-text">
+            <p class="food-title">Samosa</p>
+            <p class="food-des">A good friend becomes your best friend if you have shared samosas more than secrets.</p>
+            <div class="menu-text">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="menu.php" class="btn m-btn">EXPLORE MENU</a>
+      <!-- <img src="../source/design.png" alt="" id="m-imgDesign"> -->
+    </div>
+    <a class="prev m-prev" onclick="mplusSlides(-1)">❮</a>
+    <a class="next m-next" onclick="mplusSlides(1)">❯</a>
+  </div>
+
+
+  <!----------- Contect us --------------->
+  <div id="contectUs">
+    <div class="contect-info">
+      <h1>Are You Hungry?</h1>
+      <p class="c-headline">Come, Dine With Us!</p>
+      <p class="c-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius tenetur laboriosam facere
+        dolorum
+        repellendus nulla expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, amet.</p>
+      <div id="contect-number">
+        <div>
+          <P class="phone">Order now</P>
+          <p class="number">123 456 7890</p>
+        </div>
+        <div class="design"></div>
+        <div>
+          <P class="phone ">Reservation</P>
+          <p class="number">098 765 4321</p>
+        </div>
+      </div>
+      <img src="../source/design.png" alt="" id="imgDesign">
+    </div>
+    <div id="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.2662212204327!2d72.8053960151986!3d21.221289286552988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04ea1cdfc898f%3A0x883eb631a85bbf9b!2sTapi%20Avenue!5e0!3m2!1sen!2sin!4v1662227409423!5m2!1sen!2sin"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+
+
+  <!----------- footer section --------------->
+  <footer id="footer">
+    <div class="footer-text">
+      <p>© JSK Restaurant. All Rights Reserved</p>
+      <div id="footer-links">
+        <a href="#home" class="footer-link">Home</a>
+        <div class="footer-design"></div>
+        <a href="#aboutUs" class="footer-link">About</a>
+        <div class="footer-design"></div>
+        <a href="#contectUs" class="footer-link">Contect</a>
+        <div class="footer-design"></div>
+        <a href="login.html" class="footer-link">Login</a>
+      </div>
+    </div>
+    <div id="footer-social-media">
+      <a href="https://www.facebook.com">
+        <img src="..\source\social media png\facebook.png" alt="facebook">
+      </a>
+      <a href="https://www.whatsapp.com">
+        <img src="..\source\social media png\whatsapp.png" alt="linkedin">
+      </a>
+      <a href="https://www.instagram.com">
+        <img src="..\source\social media png\instagram.png" alt="instagram">
+      </a>
+      <a href="https://www.twitter.com">
+        <img src="..\source\social media png\twitter.png" alt="twitter">
+      </a>
+    </div>
+  </footer>
+
+
+
+  <!-- ------------------- SCRIPT-------------------- -->
+  <script>
+    /************** PRE LOADER ***********/
+    function loading() {
+      var myVar = setTimeout(showPage, 3200);
+    }
+
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+    }
+
+    /************** menu ***********/
+    const navButton = document.getElementById("navButton");
+    const crossButton = document.getElementById("crossButton");
+    const navBar = document.getElementsByClassName('navBar')[0];
+    const navBarItem = document.getElementById('navBarItem');
+
+    navButton.addEventListener('click', () => {
+      var width = 0;
+      setInterval(() => {
+        navButton.style.display = 'none'
+        
+        navBar.style.display = "flex";
+        if (width >= 40) {
+          setInterval(() => {
+            var opacity = 0;
+            setInterval(() => {
+              if (opacity >= 1) {
+                clearInterval();
+              } else {
+                opacity += 1;
+                navBarItem.style.opacity = opacity + "";
+              }
+            }, 300)
+          })
+          clearInterval();
+        } else {
+          width = width + 1;
+          navBar.style.width = width + "%";
+        }
+      }, 10)
+    })
+
+    crossButton.addEventListener('click', ()=>{
+      var opacity = 1
+      var width = 40;
+       setInterval(()=>{
+        if(opacity <= 0){
+          setInterval(()=>{
+            if(width <= 0){
+              navBar.style.display = "none";
+              navButton.style.display = "block";
+              clearInterval();
+            }else{
+              width -= 1;
+              navBar.style.width = width + "%";
+            }
+          }, 10)
+          clearInterval();
+        }else{
+          opacity -= 1;
+          navBarItem.style.opacity = opacity + "";
+        }
+
+       }, 300)
+    })
+
+
+    /***************** SLIDER *************/
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    setInterval(slideChange, 10000);
+    function slideChange() {
+      slideIndex++;
+      showSlides(slideIndex);
+    }
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slides");
+      let bar = document.getElementsByClassName("bar");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < bar.length; i++) {
+        bar[i].className = bar[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      bar[slideIndex - 1].className += " active";
+    }
+
+
+    /***************** MENU *************/
+    let mslideIndex = 1;
+    mshowSlides(mslideIndex);
+
+    setInterval(mslideChange, 7000);
+    function mslideChange() {
+      mslideIndex++;
+      mshowSlides(mslideIndex);
+    }
+
+    function mplusSlides(x) {
+      mshowSlides(mslideIndex += x);
+    }
+
+    function mcurrentSlide(x) {
+      mshowSlides(mslideIndex = x);
+    }
+
+    function mshowSlides(x) {
+      let j;
+      let mslides = document.getElementsByClassName("mslides");;
+      if (x > mslides.length) { mslideIndex = 1 }
+      if (x < 1) { mslideIndex = mslides.length }
+      for (j = 0; j < mslides.length; j++) {
+        mslides[j].style.display = "none";
+      }
+      mslides[mslideIndex - 1].style.display = "block";
+    }
+
+  </script>
+</body>
+
+</html>

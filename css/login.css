@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Custom scrollbar */
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(53, 53, 53, 0.7);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #353535;
+  }
+
+body {
+    /* background-color:  #344a72; */
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+    background-color: rgb(226, 226, 226);
+}
+
+#layout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.signup-box {
+    width: 26rem;
+    opacity: 90%;
+    padding: 2rem 1rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgb(153, 153, 153, 0.5);
+}
+
+.signin-box {
+    width: 373px;
+    margin-bottom: 7rem;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 18px;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+form {
+    width: 21rem;
+    margin: 2rem auto;
+}
+
+.side {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem
+}
+
+form label {
+    display: flex;
+    font-size: 15px;
+}
+
+form input {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid gray;
+    border-radius: 6px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    /* height: 35px; */
+    margin-top: 2rem;
+    background-color: rgb(46, 46, 46);
+    color: white;
+    font-size: 16px;
+    border: none;
+    transform: translateY(-50%);
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: rgb(24, 24, 24);
+}
+
+.signup-box>p {
+    text-align: center;
+    padding-top: 0.9rem;
+    font-size: 15px;
+    width: 21rem;
+    margin: auto;
+    font-family: 'Raleway', sans-serif;
+}
+
+.signup-box>p>a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+
+input:invalid {
+    animation: shake .3s;
+}
+
+@keyframes shake {
+    25% {
+        transform: translateX(4px)
+    }
+
+    50% {
+        transform: translateX(-4px)
+    }
+
+    75% {
+        transform: translateX(4px)
+    }
+}

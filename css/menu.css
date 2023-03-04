@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background: #e2e2e2;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* Custom select  */
+::-moz-selection {
+    /* Code for Firefox */
+    color: #FFF;
+    background: #db9423;
+}
+
+::selection {
+    color: #FFF;
+    background: #db9423;
+}
+
+/* Custom scrollbar */
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px transparent;
+    border-radius: 10px;
+    color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    /* padding: 3rem 5rem;   */
+    background: #FFF;
+    /* box-sizing: border-box; */
+}
+
+/************* list bar *************/
+.list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 19rem;
+    /* background: rgb(165, 165, 165); */
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(53, 53, 53, 0.1);
+    box-shadow: 2px 0px 20px rgba(53, 53, 53, 0.1);
+
+}
+
+.heading {
+    font-size: 30px;
+    font-family: 'Lobster', cursive;
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    /* text-shadow: 1px 1px 4px rgb(156, 156, 156); */
+}
+
+.logo {
+    margin: 0 auto;
+    width: 100px;
+    margin-top: 8rem;
+}
+
+.listlink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #353535;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 1rem;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(53, 53, 53, 0.1);
+    transition: 0.3s;
+}
+
+.listlink:hover {
+    letter-spacing: 3px;
+    color: #db9423;
+}
+
+.listlink:hover .number {
+    letter-spacing: 0px;
+}
+
+.listlinkActive {
+    letter-spacing: 3px;
+    color: #db9423;
+}
+
+.number {
+    color: white;
+    font-size: 14px;
+    border-radius: 50%;
+    background: #5e5e5e;
+    font-family: 'Kanit', sans-serif;
+    padding: 2px 6px;
+}
+
+.listdesign {
+    background: rgba(53, 53, 53, 0.1);
+    width: calc(100%);
+    height: 1px;
+}
+
+/************* main menu *************/
+.items {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: calc(100% - 19rem);
+    overflow-y: scroll;
+    padding: 0rem 5rem 10rem 5rem;
+    box-sizing: border-box;
+}
+
+.categoryHeading {
+    color: #db9423;
+    font-size: 30px;
+    /* font-weight: bold; */
+    font-family: 'Abril Fatface', display;
+    /* margin-bottom: 1rem; */
+    margin-top: 4rem;
+}
+
+.menuItem {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-wrap: wrap;
+}
+
+.food {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 1rem;
+    gap: 0.9rem;
+}
+
+.food .foodimg {
+    height: 150px;
+    width: 150px;
+    transition: 0.4s;
+}
+
+.food .foodimg:hover {
+    transform: scale(1.2);
+}
+
+.fooddetail {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 150px;
+}
+
+.fooddetail .foodname {
+    font-size: 20px;
+    color: #333740;
+    font-family: 'raleway';
+    transition: 0.2s;
+}
+
+.fooddetail .foodname:hover {
+    color: #db9423;
+}
+
+.fooddetail .price {
+    color: #666666;
+    font-size: 16px;
+    font-family: 'lato';
+    font-weight: 500;
+}
+
+
+/************* Add Options *************/
+.addOption {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.addBtn1 {
+    /* width: 9px; */
+    text-decoration: none;
+    color: white;
+    background: #db9423;
+    padding: 5px 9px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    transition: 0.4s;
+    cursor: pointer;
+    font-family: 'ubuntu', Times, serif;
+    font-weight: 400;
+
+}
+
+.addBtn1 :hover {
+    background: rgb(144, 95, 22);
+}
+
+.add-outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    width: 100%;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background: #FFF;
+    height: 30rem;
+    width: 20rem;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.7);
+    border-radius: 3px;
+    border: none;
+}
+
+.add-card-food-image {
+    height: 65%;
+    width: 100%;
+}
+
+.addForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    height: 35%;
+}
+
+.addForm input {
+    width: 25px;
+    padding: 10px 7px;
+    border: none;
+    text-align: center;
+}
+
+.card-food-detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.card-food-name{
+    color: #333740;
+    font-family: 'raleway';
+    font-size: 20px;
+}
+
+.quantityBtns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+}
+
+.addingBtn {
+    border: none;
+    text-decoration: none;
+    color: white;
+    background: #db9423;
+    padding: 8px 14px;
+    /* border-radius: 10%; */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.submitBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.addBtn2 {
+    font-family: 'ubuntu';
+    font-weight: 400;
+    font-size: 12px;
+    margin-left: 10px;
+    border-radius: 0px;
+    height: 30px;
+    width: 218px;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+}
+
+.add-outer-close {
+    /* padding: 3px; */
+    color: #353535;
+    background: #FFF;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    font-weight: 900;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.add-outer-close:hover{
+    background: #353535;
+    color: #FFF;
+}
+
+
+/************* Cart Line *************/
+#cartLine {
+    width: calc(100% - 19rem);
+    height: 55px;
+    position: fixed;
+    bottom: 0;
+    left: 19rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFF;
+    box-shadow: 0px -2px 20px rgba(53, 53, 53, 0.1);
+    font-size: 30px;
+    color: #db9423;
+    padding: 0.8rem 5rem;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+#cartLine i {
+    cursor: pointer;
+}
+
+#cartLine>div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.orderText,
+.amountText {
+    font-size: 22px;
+    color: #353535;
+}
+
+.continueBtn,
+#clearBtn {
+    border: 1px solid #db9423;
+    text-decoration: none;
+    color: white;
+    background: #db9423;
+    padding: 6px 11px;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'ubuntu';
+    font-weight: 400;
+    font-size: 17px;
+    transition: 0.2s;
+}
+
+.continueBtn:hover {
+    color: #db9423;
+    background: #FFF;
+}
+
+#clearBtn {
+    border: 1px solid red;
+    background: #FFF;
+    color: red;
+    display: none;
+}
+
+#clearBtn:hover {
+    background: red;
+    color: #FFF;
+}
+
+/************* Cart *************/
+#cart {
+    width: calc(100% - 19rem);
+    height: 400px;
+    position: fixed;
+    bottom: 55px;
+    left: 19rem;
+    display: flex;
+    bottom: -345px;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+    background: #FFF;
+    box-shadow: 0px -2px 20px rgba(53, 53, 53, 0.1);
+    /* font-size: 30px; */
+    color: #353535;
+    padding: 2rem 10rem;
+    box-sizing: border-box;
+    animation-name: fade ease 2.5s;
+}
+
+.cartTop {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    color: #db9423;
+    padding: 8px 0;
+    /* border: 2px solid yellow; */
+}
+
+.cartTop i {
+    cursor: pointer;
+}
+
+.cartTop p {
+    font-size: 26px;
+    color: #353535;
+}
+
+.cartList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    margin-top: 10px;
+    /* border: 2px solid green; */
+}
+
+.cartList>div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+    box-sizing: border-box;
+    padding: 12px 0px;
+    border-bottom: 1px dotted rgb(198, 194, 194);
+}
+
+.cartListName {
+    font-size: 22px;
+}
+
+.cartListPrice {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+    gap: 20px;
+}
+
+.cartListPrice i {
+    color: red;
+    cursor: pointer;
+}
+
+.status {
+    color: white;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 4px 5px;
+    border-radius: 5px;
+}
+
+.pending {
+    background: orangered;
+}
+
+.ordered {
+    background: #8d4004;
+}
+
+.cooking {
+    background: orange;
+}
+
+.ready {
+    background: #d0ff00;
+    color: black;
+}
+
+.served {
+    background: green;
+}
+
+.dashboardLink {
+    position: absolute;
+    top: 3rem;
+    right: 10rem;
+    border: 1px solid #353535;
+    text-decoration: none;
+    color: white;
+    background: #353535;
+    padding: 7px 13px;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'ubuntu';
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.dashboardLink:hover {
+    color: #353535;
+    background: #FFF;
+}

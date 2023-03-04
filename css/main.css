@@ -1,0 +1,992 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+
+/* Custom select  */
+::-moz-selection {
+    /* Code for Firefox */
+    color: #FFF;
+    background: #db9423;
+}
+
+::selection {
+    color: #FFF;
+    background: #db9423;
+}
+
+/* Custom scrollbar */
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px transparent;
+    border-radius: 10px;
+    color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+}
+
+/************** PRE LOADER ***********/
+#loader {
+    background: #fff;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 110%;
+    width: 100%;
+    z-index: 100;
+}
+
+#loader img {
+    position: fixed;
+    top: 35%;
+    left: 45%;
+    z-index: 100;
+    height: 180px;
+    width: 180px;
+    animation: fadeInAnimation 2s linear infinite;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/************** navbar ***********/
+
+/* navButton s tyling */
+#navButton {
+    position: absolute;
+    top: 2rem;
+    left  :3rem;
+    width: 2rem;
+    z-index: 100;
+    display: none;
+}
+
+#navButton div {
+    background: #FFF;
+    border-radius: 25px;
+    height: 3.5px;
+    margin: 4px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#one {
+    width: 1.7rem;
+}
+
+#two {
+    width: 1rem;
+}
+
+#three {
+    width: 1.5rem;
+}
+
+#navButton:hover div {
+    width: 1.7rem;
+}
+
+#crossButton{
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    font-size: 2.3rem;
+    color: #FFF;
+    z-index: 100;
+    display: none;
+}
+
+.navBar {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 3.5rem;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom: 0.1mm solid rgba(88, 88, 88, 0.25);
+    z-index: 50;
+}
+
+#navBarItem>img {
+    height: 4.5rem;
+    /* width: 5rem; */
+}
+
+#navBarItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3rem;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2rem;
+}
+
+.links>li {
+    list-style-type: none;
+}
+
+.links>li>a {
+    position: relative;
+}
+
+.item {
+    text-decoration: none;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2rem;
+    margin: 0 12px;
+    padding: 7px 10px;
+    border-radius: 9px;
+    transition: 1s;
+}
+
+.links a:after,
+#login:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right; 
+    transition: transform 0.25s ease-out;
+  }
+  
+  .item:hover:after,
+  #login:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    width: 100%;
+  }
+
+#login {
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2rem;
+    right: 4%;
+    top: 17px;
+}
+
+#login2{
+    display: none;
+}
+
+/* @media (max-width: 713px){
+    #navButton{
+        display: block;
+    }
+
+    #crossButton{
+        display: block;
+        transition: .2s;
+    }
+
+    #crossButton:hover{
+        transform: scale(1.2);
+    }
+
+    .navBar{
+        position: fixed;
+        inset: 0 60% 0 0;
+        flex-direction: column;
+        background: rgba(0, 0, 0, .6);
+        padding-top: min(30vh,  2rem);
+        padding-bottom: min(30vh,  5rem);
+        height: 100vh;
+        box-sizing: border-box;
+        width: 0%;
+        overflow: hidden;
+        display: none;
+        float: left;
+        align-items: center;
+        backdrop-filter: blur(0.1rem);
+        z-index: 100;
+        transition: .4s;
+    }
+    
+    #navBarItem{
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        margin: 0%;
+        gap: 1rem;
+        opacity: 0;
+        color: #FFF;
+        margin-top: 3rem;
+    }
+    
+    .links{
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1.5rem;
+        margin: 0%;
+    }
+
+    .item{
+        font-size: 20px;
+    }
+
+    #login{
+        display: none;
+    }
+
+    #login2{
+        display: block;
+    }
+    
+} */
+
+
+/************************ SLIDER *************************/
+#home {
+    max-width: 100vw;
+    height: 100vh;
+    border: none;
+    scroll-snap-align: start;
+}
+
+.slides {
+    position: relative;
+    height: 100%;
+    display: none;
+}
+
+.slides>img {
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    width: auto;
+    padding: 150px 70px;
+    margin-top: -37px;
+    color: white;
+    font-weight: bold;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    text-decoration: none;
+    font-size: 2.5rem;
+    z-index: 99;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    color: white;
+}
+
+.slide-text {
+    color: #f2f2f2;
+    font-size: 15px;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide-text>h1 {
+    font-size: 60px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Amita', cursive;
+    transition: 0.2s;
+}
+
+.slide-text>h1:hover {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+}
+
+.slide-text>p {
+    max-width: 50vw;
+    font-family: 'Mukta', sans-serif;
+    font-size: 15px;
+}
+
+/* ******** Button styling ****** */
+.btn {
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    padding: 1rem 2.5rem;
+    margin: 30px;
+    border: 2px solid white;
+    border-radius: 30px;
+    color: white;
+    font-family: 'lato', 'ubuntu';
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+#bars {
+    color: #f2f2f2;
+    font-size: 15px;
+    position: absolute;
+    bottom: 5vh;
+    width: 100%;
+    text-align: center;
+}
+
+.bar {
+    cursor: pointer;
+    height: 4px;
+    width: 35px;
+    margin: 0 2px;
+    background-color: #717171;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.bar:hover {
+    background-color: white;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 2.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4;
+
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+/***************** CONTECT US ***************/
+#contectUs,
+#aboutUs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: white;
+    box-sizing: border-box;
+    padding: 2rem;
+    scroll-snap-align: start;
+}
+
+.contect-info,
+.about-info,
+.menu-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333740;
+}
+
+.contect-info>h1,
+.about-info>h1,
+.menu-info>h1 {
+    font-size: 60px;
+    font-family: 'Lobster', cursive;
+    font-weight: lighter;
+    text-shadow: 1px 1px 4px rgb(156, 156, 156);
+}
+
+.c-headline,
+.a-headline,
+.m-headline {
+    font-family: 'Kanit', sans-serif;
+    font-weight: bolder;
+    letter-spacing: 10px;
+    margin-top: 10px;
+}
+
+.c-para,
+.a-para {
+    font-family: 'ubuntu';
+    font-weight: lighter;
+    color: #666666;
+    font-size: 16px;
+    text-align: center;
+    max-width: 45vw;
+    margin: 50px;
+}
+
+#contect-number {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    text-align: center;
+}
+
+.design {
+    background: #db9423;
+    width: 2.5px;
+    height: 90px;
+}
+
+.phone {
+    font-size: 30px;
+    font-family: 'Abril Fatface', cursive;
+    font-weight: lighter;
+    margin-bottom: 1rem;
+}
+
+.number {
+    font-size: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bolder;
+    color: #666666;
+}
+
+#imgDesign {
+    position: relative;
+    right: 9px;
+    margin-top: 35px;
+}
+
+#map {
+    height: 30rem;
+    width: 30rem;
+}
+
+
+
+/***************** ABOUT US ***************/
+#aboutUs {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+
+.about-slider {
+    background: #000;
+    height: 25rem;
+    width: 40vw;
+    overflow: visible;
+    position: relative;
+    margin: 2rem;
+    box-sizing: border-box;
+}
+
+#mask {
+    overflow: hidden;
+    height: 25rem;
+}
+
+.about-slider ul {
+    padding: 0;
+    position: relative;
+}
+
+.about-slider li {
+    height: 25rem;
+    width: 40vw;
+    position: absolute;
+    list-style: none;
+}
+
+.about-slider li img {
+    height: 100%;
+    width: 100%;
+}
+
+.about-slider li.firstanimation {
+    animation: cycle 25s linear infinite;
+}
+
+.about-slider li.secondanimation {
+    animation: cycletwo 25s linear infinite;
+}
+
+.about-slider li.thirdanimation {
+    animation: cyclethree 25s linear infinite;
+}
+
+.about-slider li.fourthanimation {
+    animation: cyclefour 25s linear infinite;
+}
+
+.about-slider li.fifthanimation {
+    animation: cyclefive 25s linear infinite;
+}
+
+
+
+/* ANIMATION */
+
+@keyframes cycle {
+    0% {
+        left: 0px;
+    }
+
+    4% {
+        left: 0px;
+    }
+
+    16% {
+        left: 0px;
+        opacity: 1;
+        z-index: 0;
+    }
+
+    20% {
+        left: 40vw;
+        opacity: 0;
+        z-index: 0;
+    }
+
+    21% {
+        left: -40vw;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    92% {
+        left: -40vw;
+        opacity: 0;
+        z-index: 0;
+    }
+
+    96% {
+        left: -40vw;
+        opacity: 0;
+    }
+
+    100% {
+        left: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes cycletwo {
+    0% {
+        left: -40vw;
+        opacity: 0;
+    }
+
+    16% {
+        left: -40vw;
+        opacity: 0;
+    }
+
+    20% {
+        left: 0px;
+        opacity: 1;
+    }
+
+    24% {
+        left: 0px;
+        opacity: 1;
+    }
+
+    36% {
+        left: 0px;
+        opacity: 1;
+        z-index: 0;
+    }
+
+    40% {
+        left: 40vw;
+        opacity: 0;
+        z-index: 0;
+    }
+
+    41% {
+        left: -40vw;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    100% {
+        left: -40vw;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes cyclethree {
+    0% {
+        left: -40vw;
+        opacity: 0;
+    }
+
+    36% {
+        left: -40vw;
+        opacity: 0;
+    }
+
+    40% {
+        left: 0px;
+        opacity: 1;
+    }
+
+    44% {
+        left: 0px;
+        opacity: 1;
+    }
+
+    56% {
+        left: 0px;
+        opacity: 1;
+    }
+
+    60% {
+        left: 40vw;
+        opacity: 0;
+        z-index: 0;
+    }
+
+    61% {
+        left: -40vw;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    100% {
+        left: -40vw;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes cyclefour {
+    0% {
+        left: -40vw;
+        opacity: 0;
+    }
+
+    56% {
+        left: -40vw;
+        opacity: 0;
+    }
+
+    60% {
+        left: 0px;
+        opacity: 1;
+    }
+
+    64% {
+        left: 0px;
+        opacity: 1;
+    }
+
+    76% {
+        left: 0px;
+        opacity: 1;
+        z-index: 0;
+    }
+
+    80% {
+        left: 40vw;
+        opacity: 0;
+        z-index: 0;
+    }
+
+    81% {
+        left: -40vw;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    100% {
+        left: -40vw;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes cyclefive {
+    0% {
+        left: -40vw;
+        opacity: 0;
+    }
+
+    76% {
+        left: -40vw;
+        opacity: 0;
+    }
+
+    80% {
+        left: 0px;
+        opacity: 1;
+    }
+
+    84% {
+        left: 0px;
+        opacity: 1;
+    }
+
+    96% {
+        left: 0px;
+        opacity: 1;
+        z-index: 0;
+    }
+
+    100% {
+        left: 40vw;
+        opacity: 0;
+        z-index: 0;
+    }
+}
+
+.a-headline {
+    letter-spacing: 7px;
+}
+
+#a-logo {
+    width: 10rem;
+}
+
+#a-imgDesign {
+    margin-top: 35px;
+}
+
+
+
+
+/***************** MENU ***************/
+#menu {
+    height: 100vh;
+    width: 100%;
+    color: white;
+    /* background: #000; */
+    z-index: 99;
+    scroll-snap-align: start;
+}
+
+
+#menu::before {
+    content: "";
+    background-image: url('../source/menu-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.12;
+    z-index: -2;
+}
+
+.mslides {
+    /* position: relative; */
+    width: 100%;
+    display: none;
+}
+
+.mslides>div {
+    height: 100%;
+    width: 100%;
+    padding: 0 20%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5vw;
+}
+
+.mslides>div>* {
+    margin-bottom: 12vh;
+    margin-top: 22vh;
+}
+
+.mslides img {
+    width: 12rem;
+    height: 11rem;
+}
+
+.mfade {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+.m-prev,
+.m-next {
+    position: absolute;
+    top: 236%;
+    padding: 150px 90px;
+}
+
+.food-title {
+    font-size: 30px;
+    font-family: "Abril Fatface", cursive;
+    font-weight: lighter;
+    margin-bottom: 7px;
+}
+
+.food-des {
+    font-family: 'ubuntu';
+    font-weight: lighter;
+    color: #a5a5a5;
+    font-size: 16px;
+    max-width: 25vw;
+}
+
+.menu-info {
+    /* padding: 12vh; */
+    color: white;
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+.menu-info > h1{
+    margin-top: 9vh;
+}
+
+.m-headline {
+    color: #dfdfdf;
+}
+
+.m-btn{
+    margin-top: 0vh;
+}
+
+#m-imgDesign {
+    margin-top: 2vh;
+}
+
+
+
+
+/***************** FOOTER ***************/
+#footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5rem;
+    height: 10rem;
+    width: 100%;
+    box-sizing: border-box  ;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #a9a9a9;
+    font-size: 1.09rem;
+    gap: 1.5rem;
+    font-weight: lighter;
+}
+
+#footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    gap: 1.1rem;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #a9a9a9;
+}
+
+.footer-link:hover {
+    text-decoration: none;
+    color: #a9a9a9;
+    text-decoration: underline;
+}
+
+/* footer : footer-design styling */
+.footer-design {
+    background: #a9a9a9;
+    width: 0.1px;
+    height: 16px;
+}
+
+/* footer : social innks styling */
+#footer-social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+#footer-social-media img {
+    width: 2.5rem;
+    transition: 0.2s;
+}
+
+#footer-social-media img:hover {
+    transform: scale(1.2);
+}
+
+
